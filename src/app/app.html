@@ -1,0 +1,26 @@
+<!-- Barre de navigation Bootstrap -->
+<nav class="navbar navbar-expand navbar-light bg-light border-bottom px-3">
+  <span class="navbar-brand">CvTech</span>
+  <ul class="navbar-nav flex-wrap">
+    @for (l of links; track l.path) {
+      <li class="nav-item">
+        <!-- routerLink : navigation SANS rechargement de la page.
+             routerLinkActive : ajoute la classe "active" au lien courant.
+             [exact]: nécessaire pour '/' sinon il serait actif sur toutes les pages. -->
+        <a class="nav-link" [routerLink]="l.path" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+          {{ l.label }}
+        </a>
+      </li>
+    }
+  </ul>
+</nav>
+
+<!-- Le composant de la route courante s'affiche ici -->
+<main class="container my-4">
+  <router-outlet />
+</main>
+
+<footer class="container border-top pt-2 text-muted"><h5>Footer</h5></footer>
+
+<!-- Conteneur des toasts (alerte budget dépassé) -->
+<app-toast />
