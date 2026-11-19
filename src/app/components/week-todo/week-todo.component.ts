@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { TodoComponent } from '../todo/todo.component';
 
-/** Exercice 8 : 5 colonnes (une par jour), chacune est un <app-todo> indépendant. */
+
 @Component({
   selector: 'app-week-todo',
   imports: [TodoComponent],

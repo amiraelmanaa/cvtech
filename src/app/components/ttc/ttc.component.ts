@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { CurrencyPipe } from '@angular/common';
+import { FormsModule } from '@angular/forms'; //pour utiliser ngModel
+import { CurrencyPipe } from '@angular/common';  //pour formater les nombres
 
 /**
  * Exercice 2 : calculateur de prix TTC.
@@ -9,6 +9,7 @@ import { CurrencyPipe } from '@angular/common';
  *   - quantité > 10 et <= 15 : 20 %
  *   - quantité > 15          : 30 %
  */
+
 @Component({
   selector: 'app-ttc',
   imports: [FormsModule, CurrencyPipe], // ngModel + pipe currency
@@ -49,7 +50,7 @@ export class TtcComponent {
   quantite = 1;
   tva = 18;
 
-  // Les "getters" sont recalculés à chaque changement : pas besoin de bouton « Calculer ».
+  // Les getters sont recalculés à chaque changement : pas besoin de bouton « Calculer »
 
   /** Prix d'une pièce avec TVA : HT * (1 + TVA/100) */
   get prixUnitaireTTC(): number {
@@ -58,7 +59,7 @@ export class TtcComponent {
 
   /** Taux de remise selon la quantité. */
   get tauxRemise(): number {
-    if (this.quantite > 15) return 0.3;
+    if (this.quantite > 15) return 0.3; // 15 dabord car sinon 20% serait pris pour les quantités > 15
     if (this.quantite > 10) return 0.2;
     return 0;
   }

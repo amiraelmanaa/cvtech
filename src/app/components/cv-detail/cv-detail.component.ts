@@ -2,8 +2,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Cv } from '../../models/cv';
 
 /**
- * Détail d'un CV (composant « présentationnel »).
- * Reçoit le CV par @Input, émet "embaucher" quand on clique sur le bouton.
+ * Reçoit le CV par @Input, émet "embaucher" quand on clique sur le bouton
  */
 @Component({
   selector: 'app-cv-detail',

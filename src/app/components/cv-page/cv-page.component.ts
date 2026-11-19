@@ -7,7 +7,6 @@ import { CvDetailComponent } from '../cv-detail/cv-detail.component';
 import { EmbaucheListComponent } from '../embauche-list/embauche-list.component';
 
 /**
- * Exercice 3 / 5 / 9 : page principale CvTech (composant « conteneur »).
  *
  * GESTION DE L'ÉTAT : c'est ICI que vit l'état "selectedCv". Les enfants
  * (liste et détail) ne se parlent jamais directement :

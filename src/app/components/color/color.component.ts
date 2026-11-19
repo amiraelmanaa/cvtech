@@ -22,6 +22,7 @@ import { Component } from '@angular/core';
 
     <!-- [style.backgroundColor] = property binding sur UNE propriété CSS.
          Si la couleur saisie est invalide, le navigateur l'ignore (fond inchangé). -->
+         
     <div class="p-5 rounded border" [style.backgroundColor]="color">
       Ce div change de couleur : {{ color }}
     </div>

@@ -3,11 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { Todo } from '../../models/todo';
 import { TodoService } from '../../services/todo.service';
 
-/**
- * Exercice 7 : composant Todo (formulaire + liste).
- * "providers: [TodoService]" => une instance du service PAR composant.
- * Dans WeekTodo, chaque jour a donc sa propre liste.
- */
+
 @Component({
   selector: 'app-todo',
   imports: [FormsModule],
@@ -15,10 +11,17 @@ import { TodoService } from '../../services/todo.service';
   template: `
     <h5>{{ title }}</h5>
     <label class="form-label mb-0">Name :</label>
-    <input type="text" class="form-control mb-2" [(ngModel)]="name" />
+
+    <input type="text" class="form-control mb-2"
+     [(ngModel)]="name" />
+    
     <label class="form-label mb-0">Content :</label>
-    <input type="text" class="form-control mb-2" [(ngModel)]="content" />
-    <button class="btn btn-primary btn-sm" (click)="addTodo()">Add Todo</button>
+    
+    <input type="text" class="form-control mb-2" 
+     [(ngModel)]="content" />
+    
+    <button class="btn btn-primary btn-sm" 
+    (click)="addTodo()">Add Todo</button>
 
     <ul class="list-group mt-3">
       @for (todo of todos; track $index) {
@@ -39,12 +42,15 @@ export class TodoComponent {
   private todoService = inject(TodoService);
   todos: Todo[] = this.todoService.getTodos();
 
+  //Lorsque l'utilisateur écrit dans les champs, les propriétés sont automatiquement mises à jour
   name = '';
   content = '';
 
   addTodo(): void {
-    if (!this.name.trim()) return; // on ignore un nom vide
+    if (!this.name.trim()) return; // on ignore un nom vide trim() supprime les espaces au début et à la fin d'une chaîne
     this.todoService.addTodo(new Todo(this.name, this.content));
+    
+    // on vide les champs pour le prochain todo
     this.name = '';
     this.content = '';
   }

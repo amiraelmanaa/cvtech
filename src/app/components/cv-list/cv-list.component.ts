@@ -6,7 +6,6 @@ import { Cv } from '../../models/cv';
  * Il ne connaît NI les services NI le détail : il reçoit les données par
  * @Input et PRÉVIENT son parent par @Output quand on clique sur un CV.
  *
- * Exercice 5 : couleurs alternées avec les variables $odd / $even de @for.
  */
 @Component({
   selector: 'app-cv-list',
