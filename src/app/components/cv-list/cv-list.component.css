@@ -1,0 +1,4 @@
+.cv-item { cursor: pointer; }
+.row-even { background-color: #e2e3e5; }   /* gris   */
+.row-odd  { background-color: #cfe2ff; }   /* bleu   */
+.selected { font-weight: bold; border-left: 6px solid #0d6efd; }

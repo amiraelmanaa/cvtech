@@ -13,37 +13,7 @@ import { CurrencyPipe } from '@angular/common';  //pour formater les nombres
 @Component({
   selector: 'app-ttc',
   imports: [FormsModule, CurrencyPipe], // ngModel + pipe currency
-  template: `
-    <h3>TTC Calculator</h3>
-    <div class="row g-3">
-      <div class="col-md-4">
-        <!-- [(ngModel)] = two-way binding : la vue modifie la propriété
-             et la propriété met à jour la vue. -->
-        <input type="number" class="form-control" [(ngModel)]="prixHT" min="0" />
-        <small>Prix HT</small>
-      </div>
-      <div class="col-md-4">
-        <input type="number" class="form-control" [(ngModel)]="quantite" min="1" />
-        <small>Quantité</small>
-      </div>
-      <div class="col-md-4">
-        <input type="number" class="form-control" [(ngModel)]="tva" min="0" />
-        <small>TVA (%)</small>
-      </div>
-    </div>
-
-    <div class="row g-3 mt-2">
-      <div class="col-md-4">
-        <div class="alert alert-info">Prix unitaire TTC : {{ prixUnitaireTTC | currency: 'USD' }}</div>
-      </div>
-      <div class="col-md-4">
-        <div class="alert alert-success">Prix total TTC : {{ prixTotalTTC | currency: 'USD' }}</div>
-      </div>
-      <div class="col-md-4">
-        <div class="alert alert-danger">Discount : {{ montantRemise | currency: 'USD' }} ({{ tauxRemise * 100 }}%)</div>
-      </div>
-    </div>
-  `,
+  templateUrl: 'ttc.component.html',
 })
 export class TtcComponent {
   prixHT = 0;

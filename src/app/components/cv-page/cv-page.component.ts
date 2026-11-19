@@ -16,17 +16,7 @@ import { EmbaucheListComponent } from '../embauche-list/embauche-list.component'
 @Component({
   selector: 'app-cv-page',
   imports: [CvListComponent, CvDetailComponent, EmbaucheListComponent],
-  template: `
-    <div class="row g-3">
-      <div class="col-md-5">
-        <app-cv-list [cvs]="cvs" [selected]="selectedCv" (cvSelected)="selectedCv = $event" />
-      </div>
-      <div class="col-md-7">
-        <app-cv-detail [cv]="selectedCv" (embaucher)="embaucher($event)" />
-        <app-embauche-list />
-      </div>
-    </div>
-  `,
+  templateUrl: 'cv-page.component.html',
 })
 export class CvPageComponent {
   private cvService = inject(CvService);
